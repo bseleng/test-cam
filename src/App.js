@@ -30,8 +30,6 @@ function App() {
 
   return (
     <div className="App App-header">
-
-
       <div className='camera'>
         {!cameraOn && (
           <button className='button' onClick={startCamera}>Open Camera</button>
@@ -44,76 +42,34 @@ function App() {
               audio={false}
               ref={webcamRef}
               screenshotFormat="image/jpeg"
-              videoConstraints={videoConstraints}
-              style={{ width: 320, height: 240 }}
+              videoConstraints={{ facingMode: { exact: "user" } }}
+              style={{ width: "100%", height: "320px" }}
               playsInline
               autoPlay
+              muted
             />
               <svg
-  style={{
-    position: "absolute",
-    top: -60,
-    left: 0,
-    pointerEvents: "none",
-    width: 320,
-    height: 400
-  }}
-  viewBox="0 0 320 400"
-  xmlns="http://www.w3.org/2000/svg"
->
-  {/* Овал головы */}
-  <ellipse
-    cx="160"
-    cy="180"
-    rx="90"
-    ry="120"
-    stroke="#00FF00"
-    strokeWidth="4"
-    fill="none"
-  />
-  {/* Левый глаз - контур */}
-  <ellipse
-    cx="110"
-    cy="150"
-    rx="20"
-    ry="12"
-    fill="none"
-    stroke="#00FF00"
-    strokeWidth="2"
-  />
-  {/* Правый глаз - контур */}
-  <ellipse
-    cx="210"
-    cy="150"
-    rx="20"
-    ry="12"
-    fill="none"
-    stroke="#00FF00"
-    strokeWidth="2"
-                />
-                
-                 {/* Левое ухо */}
-  <ellipse
-    cx="60"
-    cy="180"
-    rx="15"
-    ry="40"
-    fill="none"
-    stroke="#00FF00"
-    strokeWidth="3"
-  />
-  {/* Правое ухо */}
-  <ellipse
-    cx="260"
-    cy="180"
-    rx="15"
-    ry="40"
-    fill="none"
-    stroke="#00FF00"
-    strokeWidth="3"
-  />
-
-
+                  style={{
+                    position: "absolute",
+                    top: -20,
+                    left: -40,
+                    pointerEvents: "none",
+                    width: 280,
+                    height: 300
+                  }}
+                  viewBox="0 0 280 300"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  {/* Овал головы */}
+                  <ellipse
+                    cx="160"
+                    cy="180"
+                    rx="90"
+                    ry="120"
+                    stroke="#00FF00"
+                    strokeWidth="4"
+                    fill="none"
+                  />             
               </svg>
 
             </div>
@@ -123,7 +79,7 @@ function App() {
         )}
 
         {imgSrc && (
-          <img src={imgSrc} alt="captured" style={{ marginTop: 20, width: 320 }} />
+          <img src={imgSrc} alt="captured" style={{ marginTop: 10, width: 320 }} />
         )}
       </div>
     </div>
