@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+
+.button {
+  padding: 30px;
+  font-size: 24px;
+}
+
+.camera {
+  display: flex;
+  flex-direction: column;
+  column-gap: 20px;
+}
